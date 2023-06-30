@@ -48,7 +48,15 @@ module.exports = {
         include: [path.resolve(__dirname, '../src')],
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader, // 开发环境使用style-looader,打包模式抽离css,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 4,
+              modules: {
+                localIdentName: '[local]_[hash:base64:5]',
+              },
+            },
+          },
           'postcss-loader',
           'less-loader',
         ],

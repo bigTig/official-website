@@ -13,8 +13,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "experimentalDecorators": true,
-    "jsx": "react", // react18这里也可以改成react-jsx
+    "jsx": "react", // react18 这里也可以改成react-jsx
+    "types": ["node", "webpack-env"],
+    "experimentalDecorators": true, // 开启装饰器使用
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
